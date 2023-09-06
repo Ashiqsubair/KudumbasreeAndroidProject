@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light"
+        tools:targetApi="31">
+        <activity
+            android:name=".UserLogin"
+            android:exported="false" />
+        <activity
+            android:name=".UserRegister"
+            android:exported="false" />
+        <activity
+            android:name=".AdminLogin"
+            android:exported="false" />
+        <activity
+            android:name=".User_daily_collectionPage"
+            android:exported="false" />
+        <activity
+            android:name=".Repay_Loan"
+            android:exported="false" />
+        <activity
+            android:name=".User_Loan_ApplyPage"
+            android:exported="false" />
+        <activity
+            android:name=".User_Profile_page"
+            android:exported="false" />
+        <activity
+            android:name=".AdminHomePage"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="act.adminhome" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".userHomePage"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="act.Userpage" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".UserChangePassword"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="act.changePass" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AdminChangePassword"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="act.adminPasschange" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AdminmembersList"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="act.memberslistAdmin" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AdminNewRequest"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="act.membersrequest" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AdminLoanRequest"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="act.loanrequest" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".monthlyAudit"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="act.monthlyAudit" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".balanceAdmin"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="act.balanceAdmin" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
