@@ -1,22 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Repay_Loan">
 
-    <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="729dp"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
+    <View
+        android:id="@+id/top_view"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/bg_view" />
 
-        <TextView
-            android:id="@+id/textView11"
+    <TextView
+        android:id="@+id/textView39"
+        android:layout_width="224dp"
+        android:layout_height="91dp"
+        android:layout_alignBottom="@+id/top_view"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="94dp"
+        android:layout_marginTop="73dp"
+        android:layout_marginEnd="93dp"
+        android:layout_marginBottom="36dp"
+        android:gravity="center"
+        android:text="Repay Loan"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <androidx.cardview.widget.CardView
+
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_row="0"
+        android:layout_rowWeight="1"
+        android:layout_column="1"
+        android:layout_columnWeight="1"
+        android:layout_below="@+id/top_view"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="12dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="12dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="12dp">
+
+        <LinearLayout
+            android:id="@+id/relativeLayout"
             android:layout_width="match_parent"
-            android:layout_height="205dp"
-            android:text="Loan Repay page" />
-    </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:layout_marginTop="-10dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingRight="10dp">
+
+            <TextView
+                android:id="@+id/txt_totalAmount"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:textStyle="bold"
+                android:text="Total Amount" />
+
+            <TextView
+                android:id="@+id/txt_balanceAmount"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:text="To Repay" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Amount" />
+
+            <EditText
+                android:id="@+id/txt_RepayingAmount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Rs:"
+                android:inputType="text" />
+
+            <Button
+                android:id="@+id/btn_pay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pay Amount" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

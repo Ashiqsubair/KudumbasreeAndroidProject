@@ -44,27 +44,6 @@ public class DBHelperAdmin extends SQLiteOpenHelper {
             return false;
         }
     }
-    public List<String> membersdetails() {
-        ArrayList<String> list = new ArrayList<String>();
-        SQLiteDatabase MyDB = this.getReadableDatabase();
-        String query="SELECT * FROM users";
-        Cursor cursor = MyDB.rawQuery(query, null);
-        if (cursor.moveToFirst()) {
-            do {
-                list.add(cursor.getString(1));
-            } while (cursor.moveToNext());
-        }
-        return list;
-    }
-    public List<String> newRequest(){
-        ArrayList<String> list=new ArrayList<>();
-        SQLiteDatabase mydb=getWritableDatabase();
-        Cursor cursor=mydb.rawQuery("select * from users where access=?",new String[]{"no"});
-        if (cursor.moveToFirst()){
-            while (cursor.moveToNext()){
-                list.add(cursor.getString(1));
-            }
-        }
-        return list;
-    }
+
+
 }

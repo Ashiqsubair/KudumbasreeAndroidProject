@@ -4,17 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".User_Loan_ApplyPage">
+    tools:context=".AdminLoanApprovalPage">
+
 
     <View
         android:id="@+id/top_view"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:background="@drawable/bg_view" />
+
     <TextView
         android:id="@+id/textView39"
-        android:layout_width="171dp"
-        android:layout_height="46dp"
+        android:layout_width="190dp"
+        android:layout_height="73dp"
         android:layout_alignBottom="@+id/top_view"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
@@ -22,17 +24,17 @@
         android:layout_centerInParent="true"
         android:layout_marginStart="120dp"
         android:layout_marginTop="70dp"
-        android:layout_marginEnd="120dp"
-        android:layout_marginBottom="84dp"
+        android:layout_marginEnd="101dp"
+        android:layout_marginBottom="57dp"
         android:gravity="center"
-        android:text="Apply Loan"
+        android:text="Approve Loan"
         android:textSize="30dp"
         android:textStyle="bold" />
 
     <androidx.cardview.widget.CardView
 
         android:layout_width="300dp"
-        android:layout_height="450dp"
+        android:layout_height="490dp"
         android:layout_row="0"
         android:layout_rowWeight="1"
         android:layout_column="1"
@@ -52,7 +54,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:paddingLeft="10dp"
-            android:paddingTop="60dp"
+            android:paddingTop="6dp"
             android:paddingRight="10dp">
 
 
@@ -60,15 +62,30 @@
                 android:id="@+id/textView14"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Enter Below Details" />
+                android:text="Provided Details" />
+            <TextView
+                android:id="@+id/textuser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Username" />
+
+            <EditText
+                android:id="@+id/txt_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:ems="10"
+                android:enabled="false"
+                android:inputType="text"
+                 />
 
             <EditText
                 android:id="@+id/txt_reason"
                 android:layout_width="match_parent"
-                android:layout_height="161dp"
+                android:layout_height="131dp"
                 android:ems="10"
+                android:enabled="false"
                 android:gravity="start|top"
-                android:hint="Enter the purpose of loan"
                 android:inputType="textMultiLine" />
 
             <TextView
@@ -82,22 +99,38 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:enabled="false"
                 android:inputType="text"
-                android:hint="Enter Amount" />
+                 />
 
             <TextView
-                android:id="@+id/txt_interest"
+                android:id="@+id/textViewnumber"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:textStyle="bold"
-                android:gravity="center"
-                />
+                android:layout_height="32dp"
+                android:text="Mobile" />
 
-            <Button
-                android:id="@+id/btn_submit"
+            <EditText
+                android:id="@+id/txt_mobile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Submit" />
+                android:ems="10"
+                android:enabled="false"
+                android:inputType="text"
+                 />
+
+            <Button
+                android:id="@+id/btn_approve"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Approve" />
+            <Button
+                android:id="@+id/btn_reject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Reject" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
 </RelativeLayout>

@@ -1,27 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".balanceAdmin">
 
-    <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="729dp"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
+    <View
+        android:id="@+id/top_view"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/bg_view" />
 
-        <TextView
-            android:id="@+id/textView8"
+    <TextView
+        android:id="@+id/textView39"
+        android:layout_width="224dp"
+        android:layout_height="91dp"
+        android:layout_alignBottom="@+id/top_view"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="94dp"
+        android:layout_marginTop="73dp"
+        android:layout_marginEnd="93dp"
+        android:layout_marginBottom="36dp"
+        android:gravity="center"
+        android:text="Balance Available"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <androidx.cardview.widget.CardView
+
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_row="0"
+        android:layout_rowWeight="1"
+        android:layout_column="1"
+        android:layout_columnWeight="1"
+        android:layout_below="@+id/top_view"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="12dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="12dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="12dp">
+
+        <LinearLayout
+            android:id="@+id/relativeLayout"
             android:layout_width="match_parent"
-            android:layout_height="287dp"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center_vertical"
-            android:text="Balance Admin Page"
-            android:textSize="30dp" />
-    </LinearLayout>
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:layout_marginTop="-10dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingRight="10dp">
+
+            <TextView
+                android:id="@+id/txt_totalAmount"
+                android:layout_width="match_parent"
+                android:layout_height="31dp"
+                android:text="Income Via Daily Collection"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txt_dailyCollectionIncome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:inputType="text"
+                android:enabled="false"
+                 />
+
+            <TextView
+                android:id="@+id/txt_balanceAmount"
+                android:layout_width="match_parent"
+
+                android:layout_height="30dp"
+                android:text="Loan Segregated"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editTextText2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text"
+                android:enabled="false"
+                 />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Expenses Via Loan" />
+
+            <EditText
+                android:id="@+id/editTextText3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text"
+                />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

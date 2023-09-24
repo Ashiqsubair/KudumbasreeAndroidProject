@@ -25,6 +25,9 @@
         <ListView
             android:id="@+id/listviewNewReq"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:divider="@color/design_default_color_primary"
+            android:dividerHeight="2dp"
+            android:listSelector="@color/success"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

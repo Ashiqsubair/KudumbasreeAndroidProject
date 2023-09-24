@@ -11,11 +11,13 @@ import android.view.MenuItem;
 import android.view.View;
 
 public class userHomePage extends AppCompatActivity {
-
+    String username;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_home_page);
+        Intent intent=getIntent();
+        username=intent.getStringExtra("username");
     }
 
     @Override
@@ -40,18 +42,22 @@ public class userHomePage extends AppCompatActivity {
     }
     public void Userprofile(View v){
         Intent intent=new Intent(this, User_Profile_page.class);
+        intent.putExtra("username",username.toString());
         startActivity(intent);
     }
     public void Applyloan(View v){
         Intent intent=new Intent(this, User_Loan_ApplyPage.class);
+        intent.putExtra("username",username.toString());
         startActivity(intent);
     }
     public void repayLoanUser(View v){
         Intent intent=new Intent(this, Repay_Loan.class);
+        intent.putExtra("username",username.toString());
         startActivity(intent);
     }
     public void dailyCollection(View v){
         Intent intent=new Intent(this, User_daily_collectionPage.class);
+        intent.putExtra("username",username.toString());
         startActivity(intent);
     }
 }

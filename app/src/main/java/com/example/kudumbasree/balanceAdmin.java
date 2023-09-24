@@ -7,14 +7,22 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 
 public class balanceAdmin extends AppCompatActivity {
 
+    EditText dailyCollectionBalance;
+    DBDailyCollection DB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_balance_admin);
+        dailyCollectionBalance = findViewById(R.id.txt_dailyCollectionIncome);
+        DB = new DBDailyCollection(this);
+        int result = DB.getBalanceOfCollection();
+        dailyCollectionBalance.setText("Rs: "+String.valueOf(result));
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.home_menu,menu);

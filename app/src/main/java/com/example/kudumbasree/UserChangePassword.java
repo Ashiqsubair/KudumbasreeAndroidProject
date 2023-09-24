@@ -3,17 +3,41 @@ package com.example.kudumbasree;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 public class UserChangePassword extends AppCompatActivity {
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        Button save;
+        EditText oldPass,newPass,confPass;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_change_password);
+        oldPass=(EditText) findViewById(R.id.txt_oldPass);
+        newPass=(EditText) findViewById(R.id.txt_newPass);
+        confPass=(EditText) findViewById(R.id.txt_confirmpass);
+        save=findViewById(R.id.updatepassbtn);
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(oldPass.getText().toString().equals("") || newPass.getText().toString().equals("")||confPass.getText().toString().equals("")){
+                    Toast.makeText(getApplication(),"Field Cant be blank",Toast.LENGTH_SHORT).show();
+                }
+                if (confPass.getText().toString().equals(newPass.getText().toString())==false) {
+                    Toast.makeText(getApplication(),"Password Doesn't match",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
     @Override
