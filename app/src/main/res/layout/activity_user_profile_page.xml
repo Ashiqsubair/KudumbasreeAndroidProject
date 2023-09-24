@@ -151,6 +151,7 @@
         android:layout_marginBottom="84dp"
         android:gravity="center"
         android:text="Profile Info"
+        android:textColor="@color/white"
         android:textSize="30dp"
         android:textStyle="bold" />
 </RelativeLayout>

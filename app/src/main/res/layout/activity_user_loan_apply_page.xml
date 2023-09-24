@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:background="@drawable/bg_view" />
+
     <TextView
         android:id="@+id/textView39"
         android:layout_width="171dp"
@@ -25,6 +26,7 @@
         android:layout_marginEnd="120dp"
         android:layout_marginBottom="84dp"
         android:gravity="center"
+        android:textColor="@color/white"
         android:text="Apply Loan"
         android:textSize="30dp"
         android:textStyle="bold" />

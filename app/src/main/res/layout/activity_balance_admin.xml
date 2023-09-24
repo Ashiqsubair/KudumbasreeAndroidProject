@@ -27,6 +27,7 @@
         android:layout_marginBottom="36dp"
         android:gravity="center"
         android:text="Balance Available"
+        android:textColor="@color/white"
         android:textSize="30dp"
         android:textStyle="bold" />
 
@@ -70,7 +71,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:textStyle="bold"
+
                 android:textColor="@color/black"
                 android:inputType="text"
                 android:enabled="false"
@@ -81,14 +82,15 @@
                 android:layout_width="match_parent"
 
                 android:layout_height="30dp"
-                android:text="Loan Segregated"
+                android:text="Interest Income from loan"
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/editTextText2"
+                android:id="@+id/txt_loanInterestIncome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:textColor="@color/black"
                 android:inputType="text"
                 android:enabled="false"
                  />
@@ -101,7 +103,7 @@
                 android:text="Expenses Via Loan" />
 
             <EditText
-                android:id="@+id/editTextText3"
+                android:id="@+id/txt_loanExpense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"

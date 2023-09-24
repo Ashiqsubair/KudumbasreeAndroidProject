@@ -3,6 +3,7 @@ package com.example.kudumbasree;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -11,16 +12,30 @@ import android.widget.EditText;
 
 public class balanceAdmin extends AppCompatActivity {
 
-    EditText dailyCollectionBalance;
+    EditText dailyCollectionBalance,loanAmount,loanInterestIncome;
     DBDailyCollection DB;
+    DBHelperUserLoan DBl;
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_balance_admin);
         dailyCollectionBalance = findViewById(R.id.txt_dailyCollectionIncome);
+        loanAmount=findViewById(R.id.txt_loanExpense);
+        loanInterestIncome=findViewById(R.id.txt_loanInterestIncome);
         DB = new DBDailyCollection(this);
         int result = DB.getBalanceOfCollection();
         dailyCollectionBalance.setText("Rs: "+String.valueOf(result));
+
+        DBl=new DBHelperUserLoan(this);
+        int resultofLoanAmount=DBl.getloanAmount();
+        loanAmount.setText("Rs: "+String.valueOf(resultofLoanAmount));
+
+        int resultInterestAmount=DBl.getInterestAmount();
+        double interest=(resultInterestAmount*1.09)-resultInterestAmount;
+
+        loanInterestIncome.setText("Rs: "+String.valueOf(interest));
+
     }
 
     @Override

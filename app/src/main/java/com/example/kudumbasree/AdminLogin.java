@@ -37,6 +37,7 @@ public class AdminLogin extends AppCompatActivity {
                     if (result){
                         Toast.makeText(getApplication(),"Login Successfull",Toast.LENGTH_SHORT).show();
                         Intent intent=new Intent(getApplication(),AdminHomePage.class);
+                        intent.putExtra("username",username.getText().toString());
                         startActivity(intent);
                     }
                     else {

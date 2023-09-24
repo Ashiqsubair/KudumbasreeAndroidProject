@@ -5,6 +5,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
@@ -45,5 +46,21 @@ public class DBHelperAdmin extends SQLiteOpenHelper {
         }
     }
 
+    public boolean changePassword(String username,String oldpass,String newpass) {
+        SQLiteDatabase myDB = getWritableDatabase();
+
+        // Use execSQL to execute an UPDATE query
+        String updateQuery = "UPDATE admintbl SET password=? WHERE username=? and password=?";
+
+        try {
+            myDB.execSQL(updateQuery, new String[]{newpass,username,oldpass});
+            return true; // Update was successful
+        } catch (SQLiteException e) {
+            e.printStackTrace();
+            return false; // Update failed
+        } finally {
+            myDB.close(); // Close the database connection when done
+        }
+    }
 
 }

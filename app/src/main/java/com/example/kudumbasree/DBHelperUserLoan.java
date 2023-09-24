@@ -196,6 +196,33 @@ public class DBHelperUserLoan extends SQLiteOpenHelper {
         }
     }
 
+    public int getloanAmount(){
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        Cursor cursor = MyDB.rawQuery("SELECT SUM(CAST(amount AS INTEGER)) FROM loan where loanStatus='pending'", null);
+
+        int balance = 0; // Initialize the balance
+
+        if (cursor.moveToFirst()) {
+            balance = cursor.getInt(0); // Get the integer result
+        }
+
+        cursor.close(); // Close the cursor when you're done with it
+        return balance;
+    }
+
+    public int getInterestAmount(){
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        Cursor cursor = MyDB.rawQuery("SELECT SUM(CAST(amount AS INTEGER)) FROM loan where loanStatus='closed'", null);
+
+        int balance = 0; // Initialize the balance
+
+        if (cursor.moveToFirst()) {
+            balance = cursor.getInt(0); // Get the integer result
+        }
+
+        cursor.close(); // Close the cursor when you're done with it
+        return balance;
+    }
 
 
 
